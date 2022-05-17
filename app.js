@@ -4,7 +4,7 @@ const router = require("./routes/routes");
 
 const app = express();
 const PORT = process.env.PORT || 5000;
-const DBURI = `mongodb+srv://ALI:ali.devs123@cluster0.bhhln.mongodb.net/myFirstDatabase?retryWrites=true&w=majority`
+const DBURI = `mongodb+srv://ALI:@cluster0.bhhln.mongodb.net/myFirstDatabase?retryWrites=true&w=majority`
 
 //Allow body
 app.use(express.json());
