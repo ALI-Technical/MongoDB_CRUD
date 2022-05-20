@@ -1,16 +1,17 @@
 const express = require("express");
 const mongoose = require('mongoose');
 const router = require("./routes/routes");
+const cors = require('cors');
 
 const app = express();
 const PORT = process.env.PORT || 5000;
-const DBURI = `mongodb+srv://ALI:<password>@cluster0.bhhln.mongodb.net/user?retryWrites=true&w=majority`
+const DBURI = `mongodb+srv://user:<password>@cluster0.bhhln.mongodb.net/user?retryWrites=true&w=majority`
 
 //Allow body
 app.use(express.json());
+app.use(cors());
 app.use(express.urlencoded({ extended: true }));
 app.use(router);
-
 
 mongoose.connect(DBURI);
 mongoose.connection.on("connected", () => console.log("mongoose connected"));
