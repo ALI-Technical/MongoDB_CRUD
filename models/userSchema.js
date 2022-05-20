@@ -4,11 +4,10 @@ const userSchema = new mongoose.Schema({
   username: String,
   email: String,
   password: String,
-  // contact: {
-  //   type: Number,
-  //   maxlength: 11,
-  //   // unique: true,
-  // },
+  contact: {
+    type: Number,
+    maxlength: 11,
+  },
 });
 
 const UserModel = mongoose.model("user", userSchema);
