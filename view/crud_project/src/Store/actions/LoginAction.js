@@ -1,19 +1,16 @@
 import axios from 'axios';
 import actionTypes from '../constants/index'
 
-const SignUpAction = (userObj) => {
+const LoginAction = (loginObj) => {
     return (dispatch) => {
         dispatch({
-            type: actionTypes.CREATE_USER_LOADING,
+            type: actionTypes.LOGIN_USER_LOADING,
         })
         
-        if(userObj){
+        if(loginObj){
             axios
-            .post('http://localhost:5000/api/signup',userObj)
+            .post('http://localhost:5000/api/login',loginObj)
             .then(res => {
-                if(res.data.status){
-                    window.location.replace("/login")
-                }
                 console.log(res);
             })
             .catch(error => {
@@ -25,4 +22,4 @@ const SignUpAction = (userObj) => {
     }
 }
 
-export default SignUpAction
+export default LoginAction

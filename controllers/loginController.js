@@ -5,6 +5,7 @@ const loginController = (req, res) => {
 
 
   const { email, password } = req.body;
+  console.log(email,password);
   
   if (!email || !password) {
     return res.json({ message: "Required field are missing" });

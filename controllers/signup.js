@@ -30,7 +30,10 @@ const signupController = async (req, res) => {
         if (err) {
           res.send(err);
         } else {
-          res.send({ message: "user successfully signup" });
+          res.send({ 
+            message: "user successfully signup",
+            status: 'OK'
+         });
         }
       });
     }

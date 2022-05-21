@@ -1,7 +1,7 @@
 import bcryptjs from 'bcryptjs'
 import React from 'react'
 import { useState } from 'react'
-import { useDispatch } from 'react-redux'
+import { useDispatch, useSelector } from 'react-redux'
 import SignUpAction from '../Store/actions/SignupAction'
 
 const Signup = () => {
@@ -12,6 +12,8 @@ const Signup = () => {
   const [contact, setContact] = useState("");
 
   const dispatch = useDispatch();
+
+  const states = useSelector((signUpreducer) => signUpreducer)
 
   const signupHandler = async (e) => {
 
