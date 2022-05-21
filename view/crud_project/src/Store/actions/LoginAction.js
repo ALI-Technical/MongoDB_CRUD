@@ -12,6 +12,7 @@ const LoginAction = (loginObj) => {
             .post('http://localhost:5000/api/login',loginObj)
             .then(res => {
                 console.log(res);
+                // We'll need JWT for Login
             })
             .catch(error => {
                 console.log(error);
